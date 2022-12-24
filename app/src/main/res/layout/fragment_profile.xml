@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Profile">
+
+    <!--    Header-->
+    <RelativeLayout
+        android:id="@+id/profile_images_text"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/app_color">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:id="@+id/hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Your Name Hear"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Edit Profile"
+                android:textColor="#FAF6F6"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@id/profile_images_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/profile_border"
+                android:drawableLeft="@drawable/customer_service"
+                android:drawableRight="@drawable/next"
+                android:drawablePadding="10dp"
+                android:padding="18sp"
+                android:paddingStart="30dp"
+                android:text="Support"
+                android:textColor="#2C3639"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/profile_border"
+                android:drawableLeft="@drawable/feedback"
+                android:drawableRight="@drawable/next"
+                android:drawablePadding="10dp"
+                android:padding="18sp"
+                android:paddingStart="30dp"
+                android:text="Feedback"
+                android:textColor="#2C3639"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/profile_border"
+                android:drawableLeft="@drawable/info"
+                android:drawableRight="@drawable/next"
+                android:drawablePadding="10dp"
+                android:padding="18sp"
+                android:paddingStart="30dp"
+                android:text="About"
+                android:textColor="#2C3639"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/logout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/profile_border"
+                android:drawableLeft="@drawable/logout"
+                android:drawableRight="@drawable/next"
+                android:drawablePadding="10dp"
+                android:padding="18sp"
+                android:paddingStart="30dp"
+                android:text="Logout"
+                android:textColor="#2C3639"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
+
