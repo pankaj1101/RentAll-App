@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 public class DisplayProductAdapter extends RecyclerView.Adapter<DisplayProductAdapter.ViewHolder> {
 
+//    ArrayList
     private ArrayList<ProductDetailsModel> messagesArrayList;
     private Context mContext;
 
