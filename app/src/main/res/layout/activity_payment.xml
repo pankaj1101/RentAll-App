@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment">
+
+
+    <!--EditText text to enter amount-->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/edittext_design"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:text="Payment" />
+
+    <Button
+        android:id="@+id/buttonpay"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/idEdtAmount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/app_color"
+        android:padding="20dp"
+        android:text="Pay using RazorPay"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/idEdtAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter amount to be payed"
+        android:inputType="number"
+        android:padding="20dp" />
+
+    <!--button to make payment-->
+
+</RelativeLayout>

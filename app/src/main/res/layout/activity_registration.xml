@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".RegistrationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25sp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="25sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rentall" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40sp"
+                android:text="Create a new account"
+                android:textAlignment="center"
+                android:textColor="#222"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/register_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:background="@drawable/edittext_design"
+                android:drawablePadding="10dp"
+                android:hint="Your Name..."
+                android:inputType="text"
+                android:padding="15dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="#707070" />
+
+            <EditText
+                android:id="@+id/register_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/edittext_design"
+                android:drawablePadding="10dp"
+                android:hint="Email..."
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="#707070" />
+
+            <EditText
+                android:id="@+id/register_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/edittext_design"
+                android:drawablePadding="10dp"
+                android:hint="Mobile no..."
+                android:inputType="number"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="#707070" />
+
+            <EditText
+                android:id="@+id/register_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/edittext_design"
+                android:hint="Password..."
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="#707070" />
+
+            <Button
+                android:id="@+id/register_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:background="@drawable/login_button_design"
+                android:backgroundTint="#FF4626"
+                android:padding="15dp"
+                android:text="Create Account"
+                android:textAllCaps="false"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/btnSignin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Already have an account? Sign in"
+                android:textColor="#303030"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

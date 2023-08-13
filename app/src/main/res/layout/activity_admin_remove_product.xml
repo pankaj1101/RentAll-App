@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminRemoveProduct">
+
+    <RelativeLayout
+        android:id="@+id/profile_images_text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/app_color">
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif-black"
+            android:text="Remove Product"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/profile_images_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/remove_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Enter Product id"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/P_id_remove"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Enter id hear"
+            android:layout_below="@id/remove_text"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edittext_design"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_below="@+id/P_id_remove"
+            android:id="@+id/horizontal_only"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_design"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Select Category : "
+                android:textColor="#707070"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/coursesspinner"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="5sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_below="@+id/horizontal_only"
+            android:id="@+id/remove_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/app_color"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="Remove"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </RelativeLayout>
+</RelativeLayout>
