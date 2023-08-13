@@ -48,6 +48,3 @@ RentAll App is a versatile Android application developed using Java and Android 
 
 Contributions to the RentAll App are welcome! Whether it's bug fixes, feature enhancements, or documentation improvements, your contributions will help make the app even better.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
