@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,6 +20,7 @@
         android:textSize="30dp" />
 
     <androidx.recyclerview.widget.RecyclerView
+<<<<<<< HEAD
         android:id="@+id/recview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,5 +37,13 @@
         android:text="Proceed to Buy"
         android:textColor="@color/white" />
 
+=======
+        android:layout_below="@id/textview1"
+        android:id="@+id/recview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/singlerow"
+        />
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
 </RelativeLayout>

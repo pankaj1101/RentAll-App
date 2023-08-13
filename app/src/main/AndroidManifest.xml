@@ -47,8 +47,12 @@
             android:exported="false" />
         <activity
             android:name=".ProductList"
+<<<<<<< HEAD
             android:exported="false"
             />
+=======
+            android:exported="false" />
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
         <activity
             android:name=".Feedback"
             android:exported="false" />

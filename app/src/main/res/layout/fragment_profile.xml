@@ -11,15 +11,22 @@
     <RelativeLayout
         android:id="@+id/profile_images_text"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="150dp"
         android:background="@color/app_color"
         android:gravity="center">
+=======
+        android:layout_height="250dp"
+        android:background="@color/app_color">
+
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
+<<<<<<< HEAD
             android:layout_marginStart="20dp"
             android:gravity="center"
             android:orientation="horizontal">
@@ -57,11 +64,46 @@
             </LinearLayout>
 
 
+=======
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:id="@+id/hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Your Name Hear"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Edit Profile"
+                android:textColor="#FAF6F6"
+                android:textSize="15dp" />
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
         </LinearLayout>
 
     </RelativeLayout>
 
     <ScrollView
+<<<<<<< HEAD
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/profile_images_text">
@@ -306,5 +348,85 @@
 
         </LinearLayout>
     </ScrollView>
+=======
+        android:layout_below="@id/profile_images_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/profile_border"
+                android:drawableLeft="@drawable/customer_service"
+                android:drawableRight="@drawable/next"
+                android:drawablePadding="10dp"
+                android:padding="18sp"
+                android:paddingStart="30dp"
+                android:text="Support"
+                android:textColor="#2C3639"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/profile_border"
+                android:drawableLeft="@drawable/feedback"
+                android:drawableRight="@drawable/next"
+                android:drawablePadding="10dp"
+                android:padding="18sp"
+                android:paddingStart="30dp"
+                android:text="Feedback"
+                android:textColor="#2C3639"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/profile_border"
+                android:drawableLeft="@drawable/info"
+                android:drawableRight="@drawable/next"
+                android:drawablePadding="10dp"
+                android:padding="18sp"
+                android:paddingStart="30dp"
+                android:text="About"
+                android:textColor="#2C3639"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/logout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/profile_border"
+                android:drawableLeft="@drawable/logout"
+                android:drawableRight="@drawable/next"
+                android:drawablePadding="10dp"
+                android:padding="18sp"
+                android:paddingStart="30dp"
+                android:text="Logout"
+                android:textColor="#2C3639"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 </RelativeLayout>
 

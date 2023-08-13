@@ -71,8 +71,11 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+<<<<<<< HEAD
     //image Slider....
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
+=======
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
 
 }

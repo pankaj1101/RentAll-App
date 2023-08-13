@@ -2,13 +2,19 @@ package com.rentall;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.*;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 import com.google.firebase.auth.*;
 import com.google.firebase.database.*;
 
@@ -33,6 +39,10 @@ public class YourDetail extends AppCompatActivity {
         pincode = findViewById(R.id.pincode);
         adhar_no = findViewById(R.id.adhar_no);
         pancard = findViewById(R.id.pancard);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +88,10 @@ public class YourDetail extends AppCompatActivity {
     }
 
     private void retrivedatafromdatabase() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
         FirebaseUser user = mAuth.getCurrentUser();
         DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference();
         DatabaseReference reference = rootNode.child("Users");

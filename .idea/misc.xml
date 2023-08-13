@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -84,12 +88,17 @@
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
+<<<<<<< HEAD
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
@@ -97,4 +106,6 @@
       </ProjectState>
     </option>
   </component>
+=======
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 </project>

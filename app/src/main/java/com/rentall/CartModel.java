@@ -5,9 +5,15 @@ package com.rentall;
 public class CartModel
 {
     String Name,Price,Refund,ImageUrl;
+<<<<<<< HEAD
 //    CartModel()
 //    {
 //    }
+=======
+    CartModel()
+    {
+    }
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
     public CartModel(String Name, String Price, String Refund, String ImageUrl) {
         this.Name = Name;
         this.Price = Price;

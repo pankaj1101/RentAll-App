@@ -4,23 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".MainNavigation">
+=======
+    tools:context=".MainNavigation"
+    >
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation"
+<<<<<<< HEAD
         android:background="#f3f3f5" />
+=======
+        android:background="#f3f3f5"
+        />
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+<<<<<<< HEAD
         android:background="@color/white"
         app:itemIconTint="@color/bottom_nav_icon_color"
         app:itemTextColor="@color/app_color"
         app:menu="@menu/menu" />
+=======
+        app:menu="@menu/menu"
+        android:background="@color/white"
+        app:itemTextColor="@color/purple_700"
+        />
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
 </RelativeLayout>

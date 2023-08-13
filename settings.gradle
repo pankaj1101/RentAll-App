@@ -4,7 +4,10 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+<<<<<<< HEAD
         maven { url 'https://jitpack.io' }
+=======
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
     }
 }
 rootProject.name = "RentAll"

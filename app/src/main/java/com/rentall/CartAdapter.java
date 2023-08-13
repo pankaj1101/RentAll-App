@@ -1,10 +1,15 @@
 package com.rentall;
 
 import android.content.Context;
+<<<<<<< HEAD
+=======
+import android.content.DialogInterface;
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,17 +18,45 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.rentall.model.ProductDetailsModel;
+=======
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
 import java.util.ArrayList;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     //    static final String Tag = "RecycleView";
+<<<<<<< HEAD
     private ArrayList<ProductDetailsModel> messagesArrayList;
     private Context mContext;
     int total_amount = 0;
 
     public CartAdapter(ArrayList<ProductDetailsModel> messagesArrayList, Context mContext) {
+=======
+    private ArrayList<Messages> messagesArrayList;
+    private Context mContext;
+    int total_amount = 0;
+
+    public CartAdapter(ArrayList<Messages> messagesArrayList, Context mContext) {
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
         this.messagesArrayList = messagesArrayList;
         this.mContext = mContext;
     }

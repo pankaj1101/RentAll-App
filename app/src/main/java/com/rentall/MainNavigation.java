@@ -6,7 +6,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -23,11 +26,22 @@ public class MainNavigation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_navigation);
+<<<<<<< HEAD
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, obj_home).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+=======
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, obj_home).commit();
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
@@ -62,6 +76,9 @@ public class MainNavigation extends AppCompatActivity {
 
         }
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 }

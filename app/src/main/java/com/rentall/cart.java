@@ -2,10 +2,19 @@ package com.rentall;
 
 import android.view.*;
 import android.os.Bundle;
+<<<<<<< HEAD
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.google.firebase.auth.*;
+=======
+import android.widget.Toast;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 import com.google.firebase.database.*;
 import androidx.recyclerview.widget.*;
 public class cart extends Fragment {
@@ -21,7 +30,11 @@ public class cart extends Fragment {
 
         ManageDatabase.getMobileNo();
         String m = ManageDatabase.getmobileno("");
+<<<<<<< HEAD
 //        Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+=======
+        Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+>>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
         mAuth = FirebaseAuth.getInstance();
         recview = view.findViewById(R.id.recview);
