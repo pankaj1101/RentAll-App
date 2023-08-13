@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ProductList">
 
-<<<<<<< HEAD
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,8 +15,6 @@
         app:title=""
         app:titleTextColor="@color/white" />
 
-=======
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -27,7 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-<<<<<<< HEAD
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -38,30 +34,6 @@
         android:background="#f8f8f8"
         android:padding="10dp"
         tools:listitem="@layout/items">
-=======
-        <TextView
-            android:id="@+id/list_header"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/profile_border"
-            android:padding="10dp"
-            android:text="Electronics"
-            android:textAlignment="center"
-            android:textSize="30dp" />
-
-    </RelativeLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/header"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/RecyclerView"
-        android:background="#ffffff"
-        tools:listitem="@layout/items"
-        android:padding="10dp"
-        >
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -70,15 +42,8 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
-=======
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        />
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
 </RelativeLayout>

@@ -16,10 +16,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.*;
-<<<<<<< HEAD
 import com.rentall.model.ProductDetailsModel;
-=======
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
 import java.util.HashMap;
 
@@ -143,11 +140,7 @@ public class AdminAddProduct extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
 
-<<<<<<< HEAD
                         ProductDetailsModel messages = new ProductDetailsModel(name, price, description, refund, uri.toString());
-=======
-                        Messages messages = new Messages(name, price, description, refund, uri.toString());
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 //                        String modelId = root.push().getKey();
 
                         productdetail.put("p_id", product_id);

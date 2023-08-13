@@ -20,7 +20,6 @@ import java.util.ArrayList;
 
 public class DisplayProductAdapter extends RecyclerView.Adapter<DisplayProductAdapter.ViewHolder> {
 
-//    ArrayList
     private ArrayList<ProductDetailsModel> messagesArrayList;
     private Context mContext;
 
@@ -44,7 +43,7 @@ public class DisplayProductAdapter extends RecyclerView.Adapter<DisplayProductAd
 
     @NonNull
     @Override
-    public DisplayProductAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items, parent, false);
         return new ViewHolder(view);
     }

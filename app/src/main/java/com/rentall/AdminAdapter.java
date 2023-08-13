@@ -9,26 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
-<<<<<<< HEAD
 import com.rentall.model.ProductDetailsModel;
 
-=======
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 import java.util.ArrayList;
 
 public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.ViewHolder> {
 
-<<<<<<< HEAD
     private ArrayList<ProductDetailsModel> messagesArrayList;
     private Context mContext;
 
     public AdminAdapter(ArrayList<ProductDetailsModel> messagesArrayList, Context mContext) {
-=======
-    private ArrayList<Messages> messagesArrayList;
-    private Context mContext;
-
-    public AdminAdapter(ArrayList<Messages> messagesArrayList, Context mContext) {
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
         this.messagesArrayList = messagesArrayList;
         this.mContext = mContext;
     }
@@ -53,7 +43,7 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.ViewHolder> 
 
     @NonNull
     @Override
-    public AdminAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.admin_view, parent, false);
         return new ViewHolder(view);
     }

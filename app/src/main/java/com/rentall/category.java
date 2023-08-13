@@ -2,20 +2,15 @@ package com.rentall;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
-=======
-import androidx.fragment.app.Fragment;
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-<<<<<<< HEAD
 import android.widget.GridLayout;
 import android.widget.Toast;
 
@@ -24,19 +19,11 @@ import java.lang.reflect.Array;
 public class category extends Fragment {
 
     String[] productList = {"Electronic", "Hardware", "Fashion", "Gym Equipment", "Books", "Vehicle", "Real Estate", "Other"};
-=======
-
-public class category extends Fragment {
-
-    private Button expand_electronics, expand_fashion,
-            expand_books, Equipment, HardWare, Vehicles, estate;
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-<<<<<<< HEAD
 
         View view = inflater.inflate(R.layout.fragment_category, container, false);
 
@@ -127,54 +114,4 @@ public class category extends Fragment {
         intent.putExtra("category_list", true);
         startActivity(intent);
     }
-=======
-        View view = inflater.inflate(R.layout.fragment_category, container, false);
-
-        expand_electronics = view.findViewById(R.id.expand_electronics);
-        expand_fashion = view.findViewById(R.id.expand_fashion);
-        expand_books = view.findViewById(R.id.expand_books);
-        Equipment = view.findViewById(R.id.Equipment);
-        HardWare = view.findViewById(R.id.HardWare);
-        Vehicles = view.findViewById(R.id.Vehicles);
-        estate = view.findViewById(R.id.estate);
-
-        expand_electronics.setOnClickListener(V -> {
-            Intent intent = new Intent(getActivity(), ProductList.class);
-            intent.putExtra("category_name", "Electronic");
-            startActivity(intent);
-        });
-        expand_fashion.setOnClickListener(V -> {
-            Intent intent = new Intent(getActivity(), ProductList.class);
-            intent.putExtra("category_name", "Fashion");
-            startActivity(intent);
-        });
-        expand_books.setOnClickListener(V -> {
-            Intent intent = new Intent(getActivity(), ProductList.class);
-            intent.putExtra("category_name", "Books");
-            startActivity(intent);
-        });
-        Equipment.setOnClickListener(V -> {
-            Intent intent = new Intent(getActivity(), ProductList.class);
-            intent.putExtra("category_name", "Gym Equipment");
-            startActivity(intent);
-        });
-        HardWare.setOnClickListener(V -> {
-            Intent intent = new Intent(getActivity(), ProductList.class);
-            intent.putExtra("category_name", "Hardware");
-            startActivity(intent);
-        });
-        Vehicles.setOnClickListener(V -> {
-            Intent intent = new Intent(getActivity(), ProductList.class);
-            intent.putExtra("category_name", "Vehicle");
-            startActivity(intent);
-        });
-        estate.setOnClickListener(V -> {
-            Intent intent = new Intent(getActivity(), ProductList.class);
-            intent.putExtra("category_name", "Real Estate");
-            startActivity(intent);
-        });
-
-        return view;
-    }
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 }

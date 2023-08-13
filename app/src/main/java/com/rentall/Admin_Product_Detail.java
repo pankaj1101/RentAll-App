@@ -13,22 +13,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-<<<<<<< HEAD
 import com.rentall.model.ProductDetailsModel;
 
-=======
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 import java.util.ArrayList;
 
 public class Admin_Product_Detail extends AppCompatActivity {
 
     RecyclerView recyclerView;
     private DatabaseReference myRef;
-<<<<<<< HEAD
     private ArrayList<ProductDetailsModel> messagesArrayList;
-=======
-    private ArrayList<Messages> messagesArrayList;
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
     private AdminAdapter recyclerAdapter;
     private ProgressBar progressBar;
     private TextView list_header;
@@ -66,11 +59,7 @@ public class Admin_Product_Detail extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ClearAll();
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-<<<<<<< HEAD
                     ProductDetailsModel messages = new ProductDetailsModel();
-=======
-                    Messages messages = new Messages();
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 
                     messages.setImageUrl(snapshot1.child("p_img").getValue(String.class));
                     messages.setId(snapshot1.child("p_id").getValue(String.class));

@@ -6,7 +6,6 @@
     android:background="@color/white"
     tools:context=".RegistrationActivity">
 
-<<<<<<< HEAD
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -116,111 +115,4 @@
 
     </ScrollView>
 
-=======
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25sp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="25sp"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/rentall" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40sp"
-            android:text="Create a new account"
-            android:textAlignment="center"
-            android:textColor="#222"
-            android:textSize="23sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/register_name"
-            android:hint="Your Name..."
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30sp"
-            android:background="@drawable/edittext_design"
-            android:drawablePadding="10dp"
-            android:padding="15dp"
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textColorHint="#707070"
-            />
-        <EditText
-            android:id="@+id/register_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:background="@drawable/edittext_design"
-            android:drawablePadding="10dp"
-            android:padding="15dp"
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textColorHint="#707070"
-            android:hint="Email..."
-            android:inputType="textEmailAddress"
-            />
-
-        <EditText
-            android:id="@+id/register_mobile"
-            android:hint="Mobile no..."
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:background="@drawable/edittext_design"
-            android:drawablePadding="10dp"
-            android:padding="15dp"
-            android:textColor="@color/black"
-            android:textColorHint="#707070"
-            />
-        <EditText
-            android:id="@+id/register_password"
-            android:hint="Password..."
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:background="@drawable/edittext_design"
-            android:padding="15dp"
-            android:textColor="@color/black"
-            android:textColorHint="#707070"
-            />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30sp"
-            android:backgroundTint="#FF4626"
-            android:background="@drawable/login_button_design"
-            android:padding="15dp"
-            android:textColor="#ffffff"
-            android:id="@+id/register_button"
-            android:text="Create Account"
-            android:textAllCaps="false"
-            />
-
-            <TextView
-                android:id="@+id/homepage"
-                android:layout_marginTop="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Already have an account? Sign in"
-                android:textStyle="bold"
-                android:textColor="#303030"
-                android:textSize="18dp"
-
-                />
-
-    </LinearLayout>
->>>>>>> 6d4b9b6f4faf82f2e6490200b9476c5d0991721f
 </RelativeLayout>
