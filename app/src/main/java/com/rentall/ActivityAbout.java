@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.rentall.R;
+
 public class ActivityAbout extends AppCompatActivity {
 
     @Override

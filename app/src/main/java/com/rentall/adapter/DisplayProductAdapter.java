@@ -17,6 +17,7 @@ import com.rentall.R;
 import com.rentall.model.ProductDetailsModel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DisplayProductAdapter extends RecyclerView.Adapter<DisplayProductAdapter.ViewHolder> {
 
@@ -60,16 +61,21 @@ public class DisplayProductAdapter extends RecyclerView.Adapter<DisplayProductAd
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(mContext, Description.class);
-                intent.putExtra("productid", temp.getId());
-                intent.putExtra("imageUrl", temp.getImageUrl());
-                intent.putExtra("name", temp.getName());
-                intent.putExtra("price", temp.getPrice());
-                intent.putExtra("refund", temp.getRefund());
-                intent.putExtra("desc", temp.getDescription());
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                // Sending Data to Description Page..
 
+                HashMap<String, String> dataMap = new HashMap<>();
+                dataMap.put("productid", temp.getId());
+                dataMap.put("imageUrl", temp.getImageUrl());
+                dataMap.put("name", temp.getName());
+                dataMap.put("price", temp.getPrice());
+                dataMap.put("refund", temp.getRefund());
+                dataMap.put("desc", temp.getDescription());
+
+                Intent intent = new Intent(mContext, Description.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("dataMap", dataMap);
                 mContext.startActivity(intent);
+
             }
         });
     }

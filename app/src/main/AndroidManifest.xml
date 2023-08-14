@@ -13,62 +13,62 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentAll">
         <activity
-            android:name=".adddata"
+            android:name="com.rentall.adddata"
             android:exported="false" />
         <activity
-            android:name=".AdminAddProduct"
+            android:name="com.rentall.AdminAddProduct"
             android:exported="false" />
         <activity
-            android:name=".AdminRemoveProduct"
+            android:name="com.rentall.AdminRemoveProduct"
             android:exported="false" />
         <activity
-            android:name=".OrderProduct"
+            android:name="com.rentall.OrderProduct"
             android:exported="false" />
         <activity
-            android:name=".Admin_Product_Detail"
+            android:name="com.rentall.Admin_Product_Detail"
             android:exported="false" />
         <activity
-            android:name=".Admin_category"
+            android:name="com.rentall.Admin_category"
             android:exported="false" />
         <activity
-            android:name=".Support"
+            android:name="com.rentall.Support"
             android:exported="false" />
         <activity
-            android:name=".AdminPage"
+            android:name="com.rentall.AdminPage"
             android:exported="false" />
         <activity
-            android:name=".Payment"
+            android:name="com.rentall.Payment"
             android:exported="false" />
         <activity
-            android:name=".YourDetail"
+            android:name="com.rentall.YourDetail"
             android:exported="false" />
         <activity
-            android:name=".Description"
+            android:name="com.rentall.Description"
             android:exported="false" />
         <activity
-            android:name=".ProductList"
+            android:name="com.rentall.ProductList"
             android:exported="false"
             />
         <activity
-            android:name=".Feedback"
+            android:name="com.rentall.Feedback"
             android:exported="false" />
         <activity
-            android:name=".ActivityAbout"
+            android:name="com.rentall.ActivityAbout"
             android:exported="false" />
         <activity
-            android:name=".MainNavigation"
+            android:name="com.rentall.MainNavigation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name="com.rentall.RegistrationActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.rentall.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.rentall.SplashScreen"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

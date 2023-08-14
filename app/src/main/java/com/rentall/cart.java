@@ -1,61 +1,84 @@
 package com.rentall;
 
+import android.util.Log;
 import android.view.*;
 import android.os.Bundle;
+import android.widget.ImageView;
+
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
 import com.google.firebase.auth.*;
 import com.google.firebase.database.*;
+import com.rentall.adapter.CartProductAdapter;
+import com.rentall.model.CartModel;
+
 import androidx.recyclerview.widget.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class cart extends Fragment {
 
     RecyclerView recview;
-    myadapter adapter;
+    CartAdapter adapter;
     FirebaseAuth mAuth;
+    DatabaseReference reference;
+    FirebaseUser user;
+
+    ImageView emptyBox;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
-        ManageDatabase.getMobileNo();
-        String m = ManageDatabase.getmobileno("");
-//        Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+        emptyBox=view.findViewById(R.id.empty_box);
+        emptyBox.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
+
+        user = mAuth.getCurrentUser();
+        DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference();
+        reference = rootNode.child("users");
+
         recview = view.findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        getMobileNo();
+        getDataFromCart();
         return view;
     }
 
-    private void getMobileNo() {
+    private void getDataFromCart() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = database.getReference("users")
+                .child(user.getUid()) // Replace with your user ID
+                .child("Cart Product");
 
-        FirebaseUser user = mAuth.getCurrentUser();
-        DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference reference = rootNode.child("Users");
 
-        reference.child(user.getUid()).addValueEventListener(new ValueEventListener() {
+        usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String mobile_no = snapshot.child("Mobile").getValue(String.class);
-                getDataFromCart(mobile_no);
+                if (snapshot.exists()) {
+                    List<CartModel> cartProducts = new ArrayList<>();
+
+                    for (DataSnapshot productSnapshot : snapshot.getChildren()) {
+                        CartModel cartProduct = productSnapshot.getValue(CartModel.class);
+                        cartProducts.add(cartProduct);
+                    }
+
+                    CartProductAdapter adapter = new CartProductAdapter(cartProducts);
+                    recview.setAdapter(adapter);
+                } else {
+                    emptyBox.setVisibility(View.VISIBLE);
+                    Log.d("cart", "Empty Cart");
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                throw error.toException();
             }
         });
-    }
-
-    private void getDataFromCart(String mobile_no) {
-        FirebaseRecyclerOptions<CartModel> options = new FirebaseRecyclerOptions.Builder<CartModel>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child("Cart").child(mobile_no), CartModel.class)
-                .build();
-        adapter = new myadapter(options,mobile_no);
-        recview.setAdapter(adapter);
-        adapter.startListening();
     }
 }

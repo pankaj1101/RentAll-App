@@ -6,45 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".AdminPage">
 
-    <!--    Header-->
-
-    <RelativeLayout
-        android:id="@+id/profile_images_text"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/app_color">
+        android:layout_height="60dp"
+        android:background="@color/app_color"
+        android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/profile_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="sans-serif-black"
-                android:text="Admin Page"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:textSize="30sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Admin Panel"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
-    </RelativeLayout>
+        <ImageView
+            android:id="@+id/logout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@null"
+            android:padding="5dp"
+            android:src="@drawable/logout"
+            app:tint="@color/white" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/admin_logo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_below="@id/profile_images_text"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/adminlogo" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/admin_logo">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/adminlogo" />
 
             <TextView
                 android:id="@+id/btn_add"
@@ -84,20 +89,9 @@
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/logout_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/profile_border"
-                android:backgroundTint="@color/app_color"
-                android:padding="15sp"
-                android:text="Signout"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
         </LinearLayout>
+
     </ScrollView>
+
 </RelativeLayout>
 

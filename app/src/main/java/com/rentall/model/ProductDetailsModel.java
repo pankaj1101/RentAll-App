@@ -1,13 +1,10 @@
 package com.rentall.model;
 
-public class ProductDetailsModel {
+import java.text.NumberFormat;
+import java.util.Locale;
 
-    String name;
-    String imageUrl;
-    String price;
-    String description;
-    String id;
-    String refund;
+public class ProductDetailsModel {
+    String id, name, imageUrl, price, description, refund;
 
     public ProductDetailsModel() {
     }
@@ -29,7 +26,9 @@ public class ProductDetailsModel {
     }
 
     public String getRefund() {
-        return refund;
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+        String formattedAmount = numberFormat.format(Integer.parseInt(refund));
+        return formattedAmount;
     }
 
     public void setRefund(String refund) {
@@ -53,7 +52,10 @@ public class ProductDetailsModel {
     }
 
     public String getPrice() {
-        return "₹" + price + "/1 Day";
+
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+        String formattedAmount = numberFormat.format(Integer.parseInt(price));
+        return "₹" + formattedAmount + "/1 Day";
     }
 
     public void setPrice(String price) {

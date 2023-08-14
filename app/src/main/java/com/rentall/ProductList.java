@@ -35,6 +35,7 @@ public class ProductList extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
 
         recyclerView = findViewById(R.id.RecyclerView);
         progressBar = findViewById(R.id.progressBar);
@@ -45,7 +46,6 @@ public class ProductList extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         String sessionId = getIntent().getStringExtra("category_name");
-        getSupportActionBar().setTitle("");
 
         myRef = FirebaseDatabase.getInstance().getReference("Stock").child(sessionId);
 

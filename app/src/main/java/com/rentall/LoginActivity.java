@@ -38,16 +38,21 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(v -> {
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
-            loginUser(email, password);
+            if (email.equals("admin123@gmail.com") && password.equals("123456") ) {
+                Log.d("checkLogin","Admin Login Success"+email+" "+password);
+                startActivity(new Intent(LoginActivity.this, AdminPage.class));
+            } else {
+                Log.d("checkLogin","User Login");
+                loginUser(email, password);
+            }
         });
 
-        newdnewaccount.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
-        });
+        //Registration Page
+        newdnewaccount.setOnClickListener(v ->
+                startActivity(new Intent(LoginActivity.this, RegistrationActivity.class))
+        );
 
-        reocverpass.setOnClickListener(v -> {
-            showRecoverPasswordDialog();
-        });
+        reocverpass.setOnClickListener(v -> showRecoverPasswordDialog());
     }
 
     //Recovery Dialogue
