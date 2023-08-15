@@ -1,18 +1,18 @@
 package com.rentall;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
+import com.google.firebase.database.*;
 import com.rentall.model.ProductDetailsModel;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class Admin_Product_Detail extends AppCompatActivity {
         recyclerView = findViewById(R.id.RecyclerView);
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
-        list_header=findViewById(R.id.list_header);
+        list_header = findViewById(R.id.list_header);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -64,8 +64,8 @@ public class Admin_Product_Detail extends AppCompatActivity {
                     messages.setImageUrl(snapshot1.child("p_img").getValue(String.class));
                     messages.setId(snapshot1.child("p_id").getValue(String.class));
                     messages.setName(snapshot1.child("p_name").getValue(String.class));
-                    messages.setPrice(snapshot1.child("p_price").getValue(String.class));
-                    messages.setRefund(snapshot1.child("p_refund").getValue(String.class));
+                    messages.setPrice(snapshot1.child("p_price").getValue(Double.class));
+                    messages.setRefund(snapshot1.child("p_refund").getValue(Double.class));
                     messages.setDescription(snapshot1.child("p_desc").getValue(String.class));
 
                     messagesArrayList.add(messages);
@@ -77,7 +77,8 @@ public class Admin_Product_Detail extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) { }
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
         });
     }
 

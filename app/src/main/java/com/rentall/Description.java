@@ -1,8 +1,9 @@
 package com.rentall;
 
+import static com.rentall.Method.AmountFormat.formatAmount;
+
 import androidx.annotation.NonNull;
 
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.*;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 
 import com.bumptech.glide.Glide;
@@ -34,8 +36,10 @@ public class Description extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    private String emailid, productId, imageUrl, name, price, refund, description, mobile_no;
-    HashMap<String, String> receivedData;
+    private String emailid, productId, imageUrl, name, description, mobile_no;
+    private double price, refund;
+
+    HashMap<String, Object> receivedData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,29 +59,33 @@ public class Description extends AppCompatActivity {
         getSupportActionBar().setTitle("");
 
         Intent intent = getIntent();
-        receivedData = (HashMap<String, String>) intent.getSerializableExtra("dataMap");
+        Serializable serializableData = intent.getSerializableExtra("dataMap");
 
-        productId = receivedData.get("productid");
-        imageUrl = receivedData.get("imageUrl");
-        name = receivedData.get("name");
-        price = receivedData.get("price");
-        refund = receivedData.get("refund");
-        description = receivedData.get("desc");
+        receivedData = (HashMap<String, Object>) intent.getSerializableExtra("dataMap");
+
+        if (serializableData != null && serializableData instanceof HashMap) {
+            receivedData = (HashMap<String, Object>) serializableData;
+
+            productId = (String) receivedData.get("productid");
+            imageUrl = (String) receivedData.get("imageUrl");
+            name = (String) receivedData.get("name");
+            price = (double) receivedData.get("price");
+            refund = (double) receivedData.get("refund");
+            description = (String) receivedData.get("desc");
+        }
 
         Picasso.get().load(imageUrl).into(imageView);
         tv1.setText(name);
-        tv2.setText(price);
-        tv3.setText("Refundable Amount : ₹" + refund);
+        tv2.setText("₹" + formatAmount(price) + "/Month");
+        tv3.setText("₹" + formatAmount(refund) + " Refundable Amount");
         tv4.setText(description);
 
         auth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        //database name -> Cart
+
         databaseReference = firebaseDatabase.getReference("users");
-
         emailid = auth.getCurrentUser().getEmail();
-        fatch_data_for_mobile();
-
+        fetch_data_for_mobile();
     }
 
     @Override
@@ -87,7 +95,7 @@ public class Description extends AppCompatActivity {
         return true;
     }
 
-    private void fatch_data_for_mobile() {
+    private void fetch_data_for_mobile() {
 
         FirebaseUser user = auth.getCurrentUser();
         DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference();
@@ -98,7 +106,6 @@ public class Description extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //mobile
                 mobile_no = snapshot.child("mobile").getValue(String.class);
-
                 addCart.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

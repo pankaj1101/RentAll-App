@@ -7,10 +7,19 @@ public class CartModel {
     private String ImageUrl;
     private String Name;
     private String PID;
-    private String Price;
-    private String Refund;
+    private double Price;
+    private double Refund;
     private String Time;
     private String UserEmail;
+
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
 
     public String getDate() {
         return Date;
@@ -28,14 +37,6 @@ public class CartModel {
         ImageUrl = imageUrl;
     }
 
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
     public String getPID() {
         return PID;
     }
@@ -44,19 +45,11 @@ public class CartModel {
         this.PID = PID;
     }
 
-    public String getPrice() {
-        return Price;
-    }
-
-    public void setPrice(String price) {
-        Price = price;
-    }
-
-    public String getRefund() {
+    public double getRefund() {
         return Refund;
     }
 
-    public void setRefund(String refund) {
+    public void setRefund(double refund) {
         Refund = refund;
     }
 
@@ -75,4 +68,14 @@ public class CartModel {
     public void setUserEmail(String userEmail) {
         UserEmail = userEmail;
     }
+
+    public double getPrice() {
+        return Price;
+    }
+
+    public void setPrice(double price) {
+        Price = price;
+    }
+
+
 }

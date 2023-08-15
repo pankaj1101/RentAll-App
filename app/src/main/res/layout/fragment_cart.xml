@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".cart">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -16,13 +17,18 @@
         android:id="@+id/empty_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/forgot" />
+        android:padding="50dp"
+        android:src="@drawable/empty_cart" />
 
     <Button
         android:id="@+id/proceed_to_buy"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/app_color"
         android:text="Proceed to Buy"
         android:textColor="@color/white" />

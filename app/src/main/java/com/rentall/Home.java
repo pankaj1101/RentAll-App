@@ -81,8 +81,8 @@ public class Home extends Fragment {
                     messages.setId(snapshot1.child("p_id").getValue(String.class));
                     messages.setImageUrl(snapshot1.child("p_img").getValue(String.class));
                     messages.setName(snapshot1.child("p_name").getValue(String.class));
-                    messages.setPrice(snapshot1.child("p_price").getValue(String.class));
-                    messages.setRefund(snapshot1.child("p_refund").getValue(String.class));
+                    messages.setPrice(snapshot1.child("p_price").getValue(Double.class));
+                    messages.setRefund(snapshot1.child("p_refund").getValue(Double.class));
                     messages.setDescription(snapshot1.child("p_desc").getValue(String.class));
 
                     messagesArrayList.add(messages);

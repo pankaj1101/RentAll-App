@@ -1,11 +1,12 @@
 package com.rentall;
 
+import static com.rentall.Method.CalculateAmountPercentage.getRefundAmountPercentage;
+
 import android.util.Log;
 import android.view.*;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
-
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,36 +19,55 @@ import com.rentall.model.CartModel;
 import androidx.recyclerview.widget.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class cart extends Fragment {
 
     RecyclerView recview;
-    CartAdapter adapter;
     FirebaseAuth mAuth;
     DatabaseReference reference;
     FirebaseUser user;
-
     ImageView emptyBox;
+    Button proceed_to_buy;
+    CartProductAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
-        emptyBox=view.findViewById(R.id.empty_box);
+        emptyBox = view.findViewById(R.id.empty_box);
+        proceed_to_buy = view.findViewById(R.id.proceed_to_buy);
         emptyBox.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
-
         user = mAuth.getCurrentUser();
+
         DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference();
         reference = rootNode.child("users");
 
         recview = view.findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(getActivity()));
         getDataFromCart();
+
+        proceed_to_buy.setOnClickListener(v -> {
+            Map totalAmountOfEachProduct = calculateTotalAmountOfEachProduct(adapter.getCartProducts());
+        });
+
         return view;
+    }
+
+    private Map calculateTotalAmountOfEachProduct(List<CartModel> cartProducts) {
+        HashMap<String, Object> priceMap = new HashMap<>();
+
+        for (CartModel cartProduct : cartProducts) {
+            double price = cartProduct.getPrice();
+            priceMap.put(cartProduct.getPID(), price + getRefundAmountPercentage(price));
+        }
+
+        return priceMap;
     }
 
     private void getDataFromCart() {
@@ -55,7 +75,6 @@ public class cart extends Fragment {
         DatabaseReference usersRef = database.getReference("users")
                 .child(user.getUid()) // Replace with your user ID
                 .child("Cart Product");
-
 
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -68,7 +87,7 @@ public class cart extends Fragment {
                         cartProducts.add(cartProduct);
                     }
 
-                    CartProductAdapter adapter = new CartProductAdapter(cartProducts);
+                    adapter = new CartProductAdapter(cartProducts, getContext());
                     recview.setAdapter(adapter);
                 } else {
                     emptyBox.setVisibility(View.VISIBLE);

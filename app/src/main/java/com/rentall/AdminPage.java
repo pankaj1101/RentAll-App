@@ -33,8 +33,8 @@ public class AdminPage extends AppCompatActivity {
         logout_btn = findViewById(R.id.logout_btn);
 
         btn_add.setOnClickListener(v -> {
-            Intent intent = new Intent(this, AdminAddProduct.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, AdminAddProduct.class);
+//            startActivity(intent);
         });
         btn_view.setOnClickListener(v -> {
             startActivity(new Intent(this, Admin_category.class));

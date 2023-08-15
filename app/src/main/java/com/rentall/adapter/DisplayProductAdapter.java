@@ -1,5 +1,7 @@
 package com.rentall.adapter;
 
+import static com.rentall.Method.AmountFormat.formatAmount;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,11 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.rentall.Description;
+import com.rentall.Method.AmountFormat;
 import com.rentall.R;
 import com.rentall.model.ProductDetailsModel;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class DisplayProductAdapter extends RecyclerView.Adapter<DisplayProductAdapter.ViewHolder> {
 
@@ -51,9 +56,9 @@ public class DisplayProductAdapter extends RecyclerView.Adapter<DisplayProductAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView.setText(messagesArrayList.get(position).getName());
-        holder.textView1.setText(messagesArrayList.get(position).getPrice());
         Glide.with(mContext).load(messagesArrayList.get(position).getImageUrl()).into(holder.imageView);
+        holder.textView.setText(messagesArrayList.get(position).getName());
+        holder.textView1.setText("₹" + formatAmount(messagesArrayList.get(position).getPrice()) + "/Month");
 
         final ProductDetailsModel temp = messagesArrayList.get(position);
 
@@ -63,7 +68,7 @@ public class DisplayProductAdapter extends RecyclerView.Adapter<DisplayProductAd
 
                 // Sending Data to Description Page..
 
-                HashMap<String, String> dataMap = new HashMap<>();
+                HashMap<String, Object> dataMap = new HashMap<>();
                 dataMap.put("productid", temp.getId());
                 dataMap.put("imageUrl", temp.getImageUrl());
                 dataMap.put("name", temp.getName());

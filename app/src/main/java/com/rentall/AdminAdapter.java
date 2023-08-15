@@ -54,8 +54,8 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminAdapter.ViewHolder> 
         Glide.with(mContext).load(messagesArrayList.get(position).getImageUrl()).into(holder.imageView);
         holder.textView.setText(messagesArrayList.get(position).getId());
         holder.textView1.setText(messagesArrayList.get(position).getName());
-        holder.textView2.setText(messagesArrayList.get(position).getPrice());
-        holder.textView3.setText(messagesArrayList.get(position).getRefund());
+        holder.textView2.setText(String.valueOf(messagesArrayList.get(position).getPrice()));
+        holder.textView3.setText(String.valueOf(messagesArrayList.get(position).getRefund()));
         holder.textView4.setText(messagesArrayList.get(position).getDescription());
 
     }
