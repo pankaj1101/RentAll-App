@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class cart extends Fragment {
+public class cart extends Fragment implements CartProductAdapter.CartEmptyListener {
 
     RecyclerView recview;
     FirebaseAuth mAuth;
@@ -54,8 +54,8 @@ public class cart extends Fragment {
 
         proceed_to_buy.setOnClickListener(v -> {
             Map totalAmountOfEachProduct = calculateTotalAmountOfEachProduct(adapter.getCartProducts());
+            Log.d("Total Price", totalAmountOfEachProduct.toString());
         });
-
         return view;
     }
 
@@ -66,7 +66,6 @@ public class cart extends Fragment {
             double price = cartProduct.getPrice();
             priceMap.put(cartProduct.getPID(), price + getRefundAmountPercentage(price));
         }
-
         return priceMap;
     }
 
@@ -81,17 +80,16 @@ public class cart extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     List<CartModel> cartProducts = new ArrayList<>();
-
                     for (DataSnapshot productSnapshot : snapshot.getChildren()) {
                         CartModel cartProduct = productSnapshot.getValue(CartModel.class);
                         cartProducts.add(cartProduct);
                     }
-
                     adapter = new CartProductAdapter(cartProducts, getContext());
+                    adapter.setCartEmptyListener(cart.this);
                     recview.setAdapter(adapter);
+
                 } else {
                     emptyBox.setVisibility(View.VISIBLE);
-                    Log.d("cart", "Empty Cart");
                 }
             }
 
@@ -99,5 +97,16 @@ public class cart extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+
+    @Override
+    public void onCartEmpty(boolean isEmpty) {
+        if (isEmpty) {
+            emptyBox.setVisibility(View.VISIBLE);
+            recview.setVisibility(View.GONE);
+        } else {
+            emptyBox.setVisibility(View.GONE);
+            recview.setVisibility(View.VISIBLE);
+        }
     }
 }

@@ -109,7 +109,6 @@ public class Description extends AppCompatActivity {
                 addCart.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
                         addCart.setBackgroundColor(Color.WHITE);
                         addCart.setTextColor(Color.BLACK);
                         addtocartlist();
